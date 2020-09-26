@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fetch = require("node-fetch");
 const axios = require("axios");
+const apiKey = require(__dirname + '/apiKey');
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 
 const app = express();
@@ -21,7 +22,7 @@ app.post('/', (req, res) => {
     let firstName = req.body.firstname;
     let lastName = req.body.lastname;
     let email = req.body.email;
-    const apiKey = 'd1476129e47aec4ae6f2972119f94859-us2';
+    const apiKey = apiKey;
     const serverPrefix = 'us2';
     const listId = '0de8dbc8de';
     async function getData() {
